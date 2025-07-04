@@ -1,0 +1,21 @@
+name: gpt_2_distributed
+dependencies:
+  - python=3.12
+  - numpy
+  - pandas
+  - pip
+  - pip:
+      - transformers
+      - accelerate
+      - torch
+      - torchvision
+      - torchaudio
+      - tqdm
+      - tiktoken
+      - requests
+      - datasets
+      - datatrove
+      - ipykernel
+      - jupyter
+      - tensorboard
+      - tensorboard_plugin_profile
