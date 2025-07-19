@@ -351,6 +351,7 @@ def main():
     model = setup_model(config=config, device=device, training_mode=args.training_mode)
 
     # 6. Optimizer setup.
+    # TODO: Use a cosine annealing scheduler for the learning rate.
     # NOTE: Use fused AdamW in bfloat16 to save –20 % optimiser memory + speed.
     optim = torch.optim.AdamW(
         model.parameters(),

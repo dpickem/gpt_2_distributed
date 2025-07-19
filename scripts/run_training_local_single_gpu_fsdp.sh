@@ -17,5 +17,5 @@ torchrun \
   --batch 4 \
   --grad_accum_steps 4 \
   --epochs 3 \
-  --save_dir ./checkpoints \
-  --log_dir ./logs
+  --save_dir ../checkpoints \
+  --log_dir ../logs

@@ -422,10 +422,15 @@ class StatsTracker:
         self.cached_metrics: dict[str, float] = {}
         self.last_collection_step: dict[int, int] = {}  # frequency -> last_step
 
-        # Writers
+        # Writers.
+        # TODO: Create a dedicated tensorboard sub-directory for each run.
         self.tb = tb.SummaryWriter(tb_dir) if (tb_dir and _is_primary()) else None
         self.last_flush = time.time()
         self.flush_secs = flush_secs
+
+        # TODO: On how to combine train and validation loss into a single TensorBoard plot.
+        #       https://stackoverflow.com/questions/37146614/
+        #           tensorboard-plot-training-and-validation-losses-on-the-same-graph
 
     def start_epoch(self, epoch: int) -> None:
         """
